@@ -9,9 +9,6 @@ class SchedulesController < ApplicationController
 
   def create
     @schedule = Schedule.new(params.require(:schedule).permit(:title, :memo, :start_date, :end_date, :all_day))
-    
-    binding.pry
-    
     if @schedule.save
       flash[:notice] = "予約が完了しました"
       
