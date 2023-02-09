@@ -9,3 +9,8 @@ ja:
         start_date: 開始日
         end_date: 終了日
         all_day: 終日
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d"
+      short: "%Y/%m/%d %H:%M"
