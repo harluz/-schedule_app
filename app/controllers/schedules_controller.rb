@@ -44,9 +44,4 @@ class SchedulesController < ApplicationController
     @schedule.destroy
     redirect_to :schedules
   end
-
-  def display_todays_date
-    @todays_date = Date.today.strftime('%Y/%m/%d')
-  end
-  
 end
