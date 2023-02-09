@@ -14,7 +14,11 @@
   </tr>
   <tr>
     <th>終日</th>
-    <td><%= @schedule.all_day %></td>
+    <td>
+      <% if @schedule.all_day == true %>
+        ○
+      <% end %>
+    </td>
   </tr>
   <tr>
     <th>スケジュールメモ</th>
