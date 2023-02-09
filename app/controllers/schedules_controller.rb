@@ -1,6 +1,8 @@
 class SchedulesController < ApplicationController
   def index
     @schedules = Schedule.all
+    # @todays_date = Date.today.strftime('%Y/%m/%d')
+    @todays_date = Date.current
   end
 
   def new
@@ -42,4 +44,9 @@ class SchedulesController < ApplicationController
     @schedule.destroy
     redirect_to :schedules
   end
+
+  def display_todays_date
+    @todays_date = Date.today.strftime('%Y/%m/%d')
+  end
+  
 end
