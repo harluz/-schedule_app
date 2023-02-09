@@ -1,6 +1,9 @@
 <section class="FormWrapper">
   <h2 class="PageTitle__text">予定の新規追加</h2>
   <div class="FormContainer">
+
+  <%= render "shared/error", obj: @schedule %>
+
   <%= form_with model: @schedule do |f|%>
     <table>
       <tr>

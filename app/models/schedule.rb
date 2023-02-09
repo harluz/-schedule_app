@@ -6,7 +6,7 @@ class Schedule < ApplicationRecord
   validate :start_end_check
 
   def start_end_check
-    if self.end_date < self.start_date
+    if end_date && start_date && self.end_date < self.start_date
       errors.add(:end_date, message: "は開始日より前の日付は登録できません")
     end
   end
