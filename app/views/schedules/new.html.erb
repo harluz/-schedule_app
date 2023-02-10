@@ -1,0 +1,15 @@
+<section class="FormWrapper">
+  <h2 class="PageTitle__text">予定の新規追加</h2>
+  <div class="FormContainer">
+
+  <% if flash[:alert] %>
+    <div class="alert alert-danger" role="alert">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
+
+  <%= form_with model: @schedule do |f|%>
+    <%= render "shared/form", obj: f %>
+  <% end %>
+  </div>
+</section>
