@@ -60,7 +60,9 @@
 
   <div>
     <ul>
-      <li><%= obj.submit "保存" %></li>
-      <li><%= link_to "キャンセル", schedules_path %></li>
+      <div><%= obj.submit nil, class: 'btn btn-primary' %></div>
+      <%= link_to(schedules_path)  do %>
+        <div class="btn btn-secondary">キャンセル</div>
+      <% end %>
     </ul>
   </div>
