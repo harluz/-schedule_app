@@ -2,8 +2,6 @@
   <h2 class="PageTitle__text">予定を編集してください</h2>
   <div class="FormContainer">
 
-  <%= render "shared/error", obj: @schedule %>
-
   <%= form_with model: @schedule do |f|%>
     <%= render "shared/form", obj: f %>
   <% end %>

@@ -1,29 +1,66 @@
 <table>
-  <tr>
-    <th><%= obj.label :title,"タイトル" %></th>
-    <td><%= obj.text_field :title, placeholder: "タイトル" %></td>
-  </tr>
-  <tr>
-    <th><%= obj.label :start_date,"開始日" %></th>
-    <td><%= obj.date_field :start_date %></td>
-  </tr>
-  <tr>
-    <th><%= obj.label :end_date,"終了日" %></th>
-    <td><%= obj.date_field :end_date %></td>
-  </tr>
-  <tr>
-    <th><%= obj.check_box :all_day %></th>
-    <td><%= obj.label :all_day, "終日の場合はチェックを入れます" %></td>
-  </tr>
-  <tr>
-    <th><%= obj.label :memo,"スケジュールメモ" %></th>
-    <td><%= obj.text_area :memo, placeholder: "メモを入力する" %></td>
-  </tr>
-</table>
+    <tr>
+      <th><%= obj.label :title,"タイトル" %></th>
+      <td><%= obj.text_field :title, placeholder: "タイトル" %></td>
+    </tr>
+  </table>
+  <% if @schedule.errors.include?(:title) %>
+    <ul>
+      <li ><%= @schedule.errors.full_messages_for(:title).first %></li>
+    </ul>
+  <% end %>
 
-<div>
-  <ul>
-    <li><%= obj.submit "保存" %></li>
-    <li><%= link_to "キャンセル", schedules_path %></li>
-  </ul>
-</div>
+  <table>
+    <tr>
+      <th><%= obj.label :start_date,"開始日" %></th>
+      <td><%= obj.date_field :start_date %></td>
+    </tr>
+  </table>
+  <% if @schedule.errors.include?(:start_date) %>
+    <ul>
+      <li ><%= @schedule.errors.full_messages_for(:start_date).first %></li>
+    </ul>
+  <% end %>
+
+  <table>
+    <tr>
+      <th><%= obj.label :end_date,"終了日" %></th>
+      <td><%= obj.date_field :end_date %></td>
+    </tr>
+  </table>
+  <% if @schedule.errors.include?(:end_date) %>
+    <ul>
+      <li ><%= @schedule.errors.full_messages_for(:end_date).first %></li>
+    </ul>
+  <% end %>
+
+  <table>
+    <tr>
+      <th><%= obj.check_box :all_day %></th>
+      <td><%= obj.label :all_day, "終日の場合はチェックを入れます" %></td>
+    </tr>
+  </table>
+  <% if @schedule.errors.include?(:all_day) %>
+    <ul>
+      <li ><%= @schedule.errors.full_messages_for(:all_day).first %></li>
+    </ul>
+  <% end %>
+
+  <table>
+    <tr>
+      <th><%= obj.label :memo,"スケジュールメモ" %></th>
+      <td><%= obj.text_area :memo, placeholder: "メモを入力する" %></td>
+    </tr>
+  </table>
+  <% if @schedule.errors.include?(:memo) %>
+    <ul>
+      <li ><%= @schedule.errors.full_messages_for(:memo).first %></li>
+    </ul>
+  <% end %>
+
+  <div>
+    <ul>
+      <li><%= obj.submit "保存" %></li>
+      <li><%= link_to "キャンセル", schedules_path %></li>
+    </ul>
+  </div>
