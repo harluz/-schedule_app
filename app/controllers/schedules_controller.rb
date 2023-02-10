@@ -16,6 +16,7 @@ class SchedulesController < ApplicationController
       
       redirect_to schedules_path
     else
+      flash[:alert] = "予約の作成に失敗しました"
       render "new"
     end
   end
