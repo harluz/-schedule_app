@@ -5,6 +5,10 @@
   </div>
 </div>
 
+<% if flash[:notice] %>
+  <p class="notice"><%= flash[:notice] %></p>
+<% end %>
+
 <div class="table-responsive TableResponsive">
   <table class="table Table">
     <thead>
